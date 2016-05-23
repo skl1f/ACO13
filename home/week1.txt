@@ -1,0 +1,88 @@
+1. 	Primitive vs Refernce type
+
+	Frame(method memory) and Head(object container) see visualizer
+
+	Class and object(instance)
+
+	lifecycle of object
+	phases: create, use, destroy
+
+	Creator - write methods or class
+	User - uses it
+
+	JavaNamingConvetion
+
+	class - first character is upper case
+	package, variable - is noun with 1-st lower case sybol
+	method - verb, lower case
+
+	CamelCase http://java.about.com/od/javasyntax/a/nameconventions.htm
+
+	Class - structure
+	object - instance from structure
+
+	compare static method vs non-static
+
+	<MyType> <name> = new <MyType>();
+	How many actions in above code line
+
+	this keyword
+
+	Debug mod in idea
+
+	String class (see examples)
+	http://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+	http://habrahabr.ru/post/260767/
+
+ Visualize all classwork via http://www.pythontutor.com/visualize.html#mode=edit or IDEA debug mode
+
+
+ PRACTICAL PART
+
+2. Написать класс MyString
+    - создание на основе массива символов
+    - вывод на экран
+    - конкатенация
+    - понижение регистра
+    - повышение регистра
+    - поиск подстроки
+    - выделение подстроки
+    - удаление пробелов
+    - метод для сравнения с другой строкой
+    - метод поиска символа по заданому индексу
+
+3. Доработать класс Group
+
+    организовать логику метода addStudent таким образом,
+    чтобы возможно было добавлять неограниченое количество студентов
+
+    добавить методы:
+   - поиск студента по имени
+   - удаление студента по имени
+   - сортировка студентов по имени
+
+4*.  Write your own ArrayList!
+    First look the structure and methods of Java ArrayList!!!
+
+    implement different constructors
+
+    implement methods:
+
+    * add(Object)
+    * add(index, Object)
+    * get(index)
+    * remove(index)
+    * remove(index, Object)
+    * set(index, Object)
+    * clear()
+    * contains(Object)
+    * size()
+
+
+Material
+	Books
+		6.1. Кэти Сьерра, Берт Бейтс. "Head First Java / Изучаем Java"
+		6.2. Шилдт Г. "Java. Полное руководство"
+		6.3. Кей Хорстманн, Гари Корнелл - Java 2. Том 1
+		6.4. Брюс Эккель. "Философия Java"
+		6.5. OCJP 7
