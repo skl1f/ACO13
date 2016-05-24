@@ -37,12 +37,12 @@ public class TestMyString {
         System.out.println(outputSubContains2);
 
         MyString subsFrom = str3.substring(3);
-        String outputSubsFrom = String.format("Substring From 3 to the end: %s", subsFrom);
+        String outputSubsFrom = String.format("Substring \"%s\" From 3 to the end: %s", str3, subsFrom);
         System.out.println(outputSubsFrom);
 
 
         MyString subsFromTo = str3.substring(3, 5);
-        String outputSubsFromTo = String.format("Substring From 3 to 5: %s", subsFromTo);
+        String outputSubsFromTo = String.format("Substring \"%s\" From 3 to 5: %s", str3, subsFromTo);
         System.out.println(outputSubsFromTo);
 
         MyString strForTrim = new MyString("   qweabcwerqw   ");
@@ -53,14 +53,14 @@ public class TestMyString {
         MyString equalsString1 = new MyString("abcd");
         MyString equalsString2 = new MyString("abcd");
         boolean equality = equalsString1.equals(equalsString2);
-        String outputEquality  = String.format("Check if MyString: %s are equal to: %s. Result: %s",
+        String outputEquality  = String.format("Check if MyString: \"%s\" are equal to: \"%s\". Result: %s",
                 equalsString1, equalsString2, equality);
         System.out.println(outputEquality);
 
         MyString equalsString3 = new MyString("sfghgfhh");
         MyString equalsString4 = new MyString("sdfhgsdh");
         boolean equality1 = equalsString3.equals(equalsString4);
-        String outputEquality1  = String.format("Check if MyString: %s are equal to: %s. Result: %s",
+        String outputEquality1  = String.format("Check if MyString: \"%s\" are equal to: \"%s\". Result: %s",
                 equalsString3, equalsString4, equality1);
         System.out.println(outputEquality1);
 
