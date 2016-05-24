@@ -1,4 +1,4 @@
-package week1.home;
+package utils;
 
 /**
  * Created by skl1f on 5/24/2016.
@@ -14,11 +14,16 @@ public class MyString {
         characters = string.toCharArray();
     }
 
-    public static void toString(MyString str) {
+    public static void print(MyString str) {
         for (char ch: str.characters){
             System.out.print(ch);
         }
         System.out.println();
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.characters);
     }
 
     public int length() {
@@ -26,19 +31,19 @@ public class MyString {
     }
 
     public static MyString toUpperCase(MyString str) {
-        MyString resultUpper = new MyString(str.characters.clone());
-        for (int i = 0; i < resultUpper.length(); i++) {
-            resultUpper.characters[i] = Character.toUpperCase(resultUpper.characters[i]);
+        MyString result = new MyString(str.characters.clone());
+        for (int i = 0; i < result.length(); i++) {
+            result.characters[i] = Character.toUpperCase(result.characters[i]);
         }
-        return resultUpper;
+        return result;
     }
 
     public static MyString toLowerCase(MyString str) {
-        MyString resultLower = new MyString(str.characters.clone());
-        for (int i = 0; i < resultLower.length(); i++) {
-            resultLower.characters[i] = Character.toLowerCase(resultLower.characters[i]);
+        MyString result = new MyString(str.characters.clone());
+        for (int i = 0; i < result.length(); i++) {
+            result.characters[i] = Character.toLowerCase(result.characters[i]);
         }
-        return resultLower;
+        return result;
     }
 
     public static MyString concat(MyString strOne, MyString strTwo) {
