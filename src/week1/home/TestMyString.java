@@ -21,5 +21,13 @@ public class TestMyString {
 
         MyString.toString(upperCaseString);
         MyString.toString(lowerCaseString);
+
+        MyString str1 = new MyString("qwewerqw");
+        MyString str2 = new MyString("abc");
+        boolean sub = MyString.substr(str1, str2);
+
+        System.out.println(sub);
+
+
     }
 }

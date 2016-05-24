@@ -10,6 +10,10 @@ public class MyString {
         characters = chars;
     }
 
+    public MyString(String string) {
+        characters = string.toCharArray();
+    }
+
     public static void toString(MyString str) {
         for (char ch: str.characters){
             System.out.print(ch);
@@ -49,6 +53,23 @@ public class MyString {
             for (int i = 0; i <= strTwo.length() - 1; i++) {
                 result.characters[counter] = strTwo.characters[i];
                 counter++;
+            }
+        }
+        return result;
+    }
+
+    public static boolean substr(MyString string, MyString subString) {
+        boolean result = false;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.characters[i] == subString.characters[0]) {
+                for (int k = 0; i < subString.length() - 1 || k < subString.length() - 1; k++) {
+                    if (string.characters[i+k] == subString.characters[k]) {
+                        result = true;
+                    } else {
+                        result = false;
+                        break;
+                    }
+                }
             }
         }
         return result;
