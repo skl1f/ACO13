@@ -56,5 +56,9 @@ public class TestMyString {
         String outputEquality1  = String.format("Check if MyString: %s are equal to: %s. Result: %s",
                 equalsString3, equalsString4, equality1);
         System.out.println(outputEquality1);
+
+        int index = equalsString4.indexOf('f');
+        String indexStr = String.format("Index of character \"f\" in \"%s\" is: %s", equalsString4, index);
+        System.out.println(indexStr);
     }
 }

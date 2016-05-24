@@ -3,6 +3,7 @@ package utils;
 /**
  * Created by skl1f on 5/24/2016.
  */
+
 public class MyString {
     private char[] characters;
 
@@ -131,5 +132,14 @@ public class MyString {
             }
         }
         return true;
+    }
+
+    public int indexOf(char ch) {
+        for (int i = 0; i < this.length(); i++) {
+            if (this.characters[i] == ch) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
