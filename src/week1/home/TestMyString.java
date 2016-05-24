@@ -12,26 +12,32 @@ public class TestMyString {
         char[] charsSecond = {'x', 'y', 'z'};
         MyString strSecond = new MyString(charsSecond);
 
-        MyString concat = MyString.concat(str, strSecond);
+        MyString concat = str.concat(strSecond);
 
         MyString.print(str);
         System.out.println(str.length());
         MyString.print(concat);
 
-        MyString upperCaseString = MyString.toUpperCase(concat);
-        MyString lowerCaseString = MyString.toLowerCase(upperCaseString);
+        MyString upperCaseString = concat.toUpperCase();
+        MyString lowerCaseString = upperCaseString.toLowerCase();
 
-        MyString.print(upperCaseString);
-        MyString.print(lowerCaseString);
+        System.out.println("Upper Case: " + upperCaseString);
+        System.out.println("Lower Case: " + lowerCaseString);
+
 
         MyString str1 = new MyString("qwewerqw");
         MyString str2 = new MyString("abc");
-        boolean sub = MyString.substr(str1, str2);
+        MyString str3 = new MyString("qweabcwerqw");
+        boolean subContains = str1.contains(str2);
+        boolean subContains2 = str3.contains(chars);
 
-        System.out.println(sub);
+        String outputSubContains = String.format("String %s, contains: %s. %s", str1, str2, subContains);
+        String outputSubContains2 = String.format("String %s, contains chars[]: %s. %s",
+                str3, String.valueOf(chars), subContains2);
+        System.out.println(outputSubContains);
+        System.out.println(outputSubContains2);
 
-        System.out.println(str2);
-
-
+        System.out.println(str3.substring(3));
+        System.out.println(str3.substring(3, 5));
     }
 }

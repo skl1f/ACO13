@@ -30,29 +30,29 @@ public class MyString {
         return this.characters.length;
     }
 
-    public static MyString toUpperCase(MyString str) {
-        MyString result = new MyString(str.characters.clone());
+    public MyString toUpperCase() {
+        MyString result = new MyString(this.characters.clone());
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toUpperCase(result.characters[i]);
         }
         return result;
     }
 
-    public static MyString toLowerCase(MyString str) {
-        MyString result = new MyString(str.characters.clone());
+    public MyString toLowerCase() {
+        MyString result = new MyString(this.characters.clone());
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toLowerCase(result.characters[i]);
         }
         return result;
     }
 
-    public static MyString concat(MyString strOne, MyString strTwo) {
-        int lengths = strOne.length() + strTwo.length();
+    public MyString concat(MyString strTwo) {
+        int lengths = this.length() + strTwo.length();
         MyString result = new MyString(new char[lengths]);
         int counter = 0;
         while (counter < result.length()){
-            for (int i = 0; i <= strOne.length() - 1; i++) {
-                result.characters[counter] = strOne.characters[i];
+            for (int i = 0; i <= this.length() - 1; i++) {
+                result.characters[counter] = this.characters[i];
                 counter++;
             }
             for (int i = 0; i <= strTwo.length() - 1; i++) {
@@ -63,12 +63,12 @@ public class MyString {
         return result;
     }
 
-    public static boolean substr(MyString string, MyString subString) {
+    public boolean contains(MyString subString) {
         boolean result = false;
-        for (int i = 0; i < string.length(); i++) {
-            if (string.characters[i] == subString.characters[0]) {
+        for (int i = 0; i < this.length(); i++) {
+            if (this.characters[i] == subString.characters[0]) {
                 for (int k = 0; i < subString.length() - 1 || k < subString.length() - 1; k++) {
-                    if (string.characters[i+k] == subString.characters[k]) {
+                    if (this.characters[i+k] == subString.characters[k]) {
                         result = true;
                     } else {
                         result = false;
@@ -78,5 +78,28 @@ public class MyString {
             }
         }
         return result;
+    }
+
+    public boolean contains(char[] chars) {
+        MyString str = new MyString(chars.clone());
+        return this.contains(str);
+    }
+
+    public MyString substring(int beginIndex) {
+        int len = this.length() - beginIndex;
+        char[] chars = new char[len];
+        for (int i = 0; i < len || beginIndex <= len; i++, beginIndex++) {
+            chars[i] = this.characters[beginIndex];
+        }
+        return new MyString(chars.clone());
+    }
+
+    public MyString substring(int beginIndex, int endIndex) {
+        int len = this.length() - beginIndex;
+        char[] chars = new char[len];
+        for (int i = 0; beginIndex <= endIndex; i++, beginIndex++) {
+            chars[i] = this.characters[beginIndex];
+        }
+        return new MyString(chars.clone());
     }
 }
