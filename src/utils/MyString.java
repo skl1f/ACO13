@@ -31,7 +31,9 @@ public class MyString {
     }
 
     public MyString toUpperCase() {
-        MyString result = new MyString(this.characters.clone());
+        char[] ch = new char[this.characters.length];
+        System.arraycopy(this.characters, 0, ch, 0, this.characters.length);
+        MyString result = new MyString(ch);
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toUpperCase(result.characters[i]);
         }
@@ -39,7 +41,9 @@ public class MyString {
     }
 
     public MyString toLowerCase() {
-        MyString result = new MyString(this.characters.clone());
+        char[] ch = new char[this.characters.length];
+        System.arraycopy(this.characters, 0, ch, 0, this.characters.length);
+        MyString result = new MyString(ch);
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toLowerCase(result.characters[i]);
         }
@@ -81,7 +85,9 @@ public class MyString {
     }
 
     public boolean contains(char[] chars) {
-        MyString str = new MyString(chars.clone());
+        char[] ch = new char[chars.length];
+        System.arraycopy(chars, 0, ch, 0, chars.length);
+        MyString str = new MyString(ch);
         return this.contains(str);
     }
 
@@ -91,7 +97,7 @@ public class MyString {
         for (int i = 0; i < len || beginIndex <= len; i++, beginIndex++) {
             chars[i] = this.characters[beginIndex];
         }
-        return new MyString(chars.clone());
+        return new MyString(chars);
     }
 
     public MyString substring(int beginIndex, int endIndex) {
@@ -100,6 +106,30 @@ public class MyString {
         for (int i = 0; beginIndex <= endIndex; i++, beginIndex++) {
             chars[i] = this.characters[beginIndex];
         }
-        return new MyString(chars.clone());
+        return new MyString(chars);
+    }
+
+    public MyString trim() {
+        int beginIndex = 0, endIndex = this.characters.length - 1;
+        while (this.characters[beginIndex] == ' ') {
+            beginIndex++;
+            }
+        while (this.characters[endIndex] == ' ') {
+            endIndex--;
+        }
+        return this.substring(beginIndex, endIndex);
+    }
+
+    public boolean equals(MyString string) {
+        if (this.length() != string.length()) {
+            return false;
+        } else {
+            for (int i = 0; i < this.length(); i++) {
+                if (this.characters[i] != string.characters[i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

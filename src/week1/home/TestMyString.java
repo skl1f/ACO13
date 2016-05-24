@@ -39,5 +39,22 @@ public class TestMyString {
 
         System.out.println(str3.substring(3));
         System.out.println(str3.substring(3, 5));
+
+        MyString strForTrim = new MyString("   qweabcwerqw   ");
+        System.out.println(strForTrim.trim());
+
+        MyString equalsString1 = new MyString("abcd");
+        MyString equalsString2 = new MyString("abcd");
+        boolean equality = equalsString1.equals(equalsString2);
+        String outputEquality  = String.format("Check if MyString: %s are equal to: %s. Result: %s",
+                equalsString1, equalsString2, equality);
+        System.out.println(outputEquality);
+
+        MyString equalsString3 = new MyString("sfghgfhh");
+        MyString equalsString4 = new MyString("sdfhgsdh");
+        boolean equality1 = equalsString3.equals(equalsString4);
+        String outputEquality1  = String.format("Check if MyString: %s are equal to: %s. Result: %s",
+                equalsString3, equalsString4, equality1);
+        System.out.println(outputEquality1);
     }
 }
