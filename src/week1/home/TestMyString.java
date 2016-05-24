@@ -14,9 +14,8 @@ public class TestMyString {
 
         MyString concat = str.concat(strSecond);
 
-        MyString.print(str);
-        System.out.println(str.length());
-        MyString.print(concat);
+        String outputConcat = String.format("\"%s\" + \"%s\" => \"%s\"", str, strSecond, concat);
+        System.out.println(outputConcat);
 
         MyString upperCaseString = concat.toUpperCase();
         MyString lowerCaseString = upperCaseString.toLowerCase();
@@ -37,11 +36,19 @@ public class TestMyString {
         System.out.println(outputSubContains);
         System.out.println(outputSubContains2);
 
-        System.out.println(str3.substring(3));
-        System.out.println(str3.substring(3, 5));
+        MyString subsFrom = str3.substring(3);
+        String outputSubsFrom = String.format("Substring From 3 to the end: %s", subsFrom);
+        System.out.println(outputSubsFrom);
+
+
+        MyString subsFromTo = str3.substring(3, 5);
+        String outputSubsFromTo = String.format("Substring From 3 to 5: %s", subsFromTo);
+        System.out.println(outputSubsFromTo);
 
         MyString strForTrim = new MyString("   qweabcwerqw   ");
-        System.out.println(strForTrim.trim());
+        MyString myStrTrim = strForTrim.trim();
+        String outputTrim = String.format("Trim whitespaces In: \"%s\". Out: \"%s\"", strForTrim, myStrTrim);
+        System.out.println(outputTrim);
 
         MyString equalsString1 = new MyString("abcd");
         MyString equalsString2 = new MyString("abcd");
