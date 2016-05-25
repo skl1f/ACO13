@@ -61,7 +61,7 @@ public class MyString {
     }
 
     public boolean contains(MyString subString) {
-        if (subString == null || this.length() > subString.length()) {
+        if (subString == null || this.length() < subString.length()) {
             return false;
         }
         boolean result = false;
