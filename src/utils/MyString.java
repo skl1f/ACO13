@@ -117,7 +117,8 @@ public class MyString {
     public boolean equals(MyString string) {
         if (this == string) {
             return true;
-        } else if (string == null || this.length() != string.length()) {
+        }
+        if (string == null || this.length() != string.length()) {
             return false;
         }
         for (int i = 0; i < this.length(); i++) {
