@@ -5,6 +5,7 @@ package utils;
  */
 
 public class MyString {
+//    todo if your methods receive reference type - make checks on NullPointerException
     private char[] characters;
 
     public MyString(char[] chars) {
@@ -24,16 +25,16 @@ public class MyString {
 
     @Override
     public String toString() {
-        return String.valueOf(this.characters);
+        return String.valueOf(characters);
     }
 
     public int length() {
-        return this.characters.length;
+        return characters.length;
     }
 
     public MyString toUpperCase() {
-        char[] ch = new char[this.characters.length];
-        System.arraycopy(this.characters, 0, ch, 0, this.characters.length);
+        char[] ch = new char[characters.length];
+        System.arraycopy(characters, 0, ch, 0, characters.length);
         MyString result = new MyString(ch);
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toUpperCase(result.characters[i]);
@@ -42,8 +43,8 @@ public class MyString {
     }
 
     public MyString toLowerCase() {
-        char[] ch = new char[this.characters.length];
-        System.arraycopy(this.characters, 0, ch, 0, this.characters.length);
+        char[] ch = new char[characters.length];
+        System.arraycopy(characters, 0, ch, 0, characters.length);
         MyString result = new MyString(ch);
         for (int i = 0; i < result.length(); i++) {
             result.characters[i] = Character.toLowerCase(result.characters[i]);
@@ -51,29 +52,33 @@ public class MyString {
         return result;
     }
 
+
+//    Or use System.arraycopy
     public MyString concat(MyString strTwo) {
         int lengths = this.length() + strTwo.length();
         MyString result = new MyString(new char[lengths]);
-        int counter = 0;
-        while (counter < result.length()){
+        int resultIdx = 0;
+//        don't need this loop
+//        while (resultIdx < result.length()){
             for (int i = 0; i <= this.length() - 1; i++) {
-                result.characters[counter] = this.characters[i];
-                counter++;
+                result.characters[resultIdx] = this.characters[i];
+                resultIdx++;
             }
             for (int i = 0; i <= strTwo.length() - 1; i++) {
-                result.characters[counter] = strTwo.characters[i];
-                counter++;
+                result.characters[resultIdx] = strTwo.characters[i];
+                resultIdx++;
             }
-        }
+//        }
         return result;
     }
-
+// todo cause "qwewerqwab".contains("abc) return true
     public boolean contains(MyString subString) {
         boolean result = false;
         for (int i = 0; i < this.length(); i++) {
             if (this.characters[i] == subString.characters[0]) {
+//                i = constant, so its mustn't be in for condition
                 for (int k = 0; i < subString.length() - 1 || k < subString.length() - 1; k++) {
-                    if (this.characters[i+k] == subString.characters[k]) {
+                    if (this.characters[i + k] == subString.characters[k]) {
                         result = true;
                     } else {
                         result = false;
@@ -82,14 +87,17 @@ public class MyString {
                 }
             }
         }
-        return result;
+            return result;
     }
 
     public boolean contains(char[] chars) {
-        char[] ch = new char[chars.length];
+
+        /*char[] ch = new char[chars.length];
         System.arraycopy(chars, 0, ch, 0, chars.length);
-        MyString str = new MyString(ch);
-        return this.contains(str);
+        MyString str = new MyString(ch);*/
+
+//        KISS
+        return chars != null && contains(new MyString(chars));
     }
 
     public MyString substring(int beginIndex) {
@@ -101,8 +109,12 @@ public class MyString {
         return new MyString(chars);
     }
 
+
+//    Or use System.arraycopy
     public MyString substring(int beginIndex, int endIndex) {
-        int len = this.length() - beginIndex;
+//          forgot to cut array from backside
+//        int len = this.length() - beginIndex;
+        int len = endIndex - beginIndex + 1;
         char[] chars = new char[len];
         for (int i = 0; beginIndex <= endIndex; i++, beginIndex++) {
             chars[i] = this.characters[beginIndex];
@@ -122,6 +134,11 @@ public class MyString {
     }
 
     public boolean equals(MyString string) {
+//        todo
+//          at first compare links
+//          check null
+//          only than check chars
+
         if (this.length() != string.length()) {
             return false;
         } else {
