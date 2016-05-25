@@ -4,6 +4,7 @@ import utils.MyString;
 
 /**
  * Created by skl1f on 5/24/2016.
+ * Testing MyString
  */
 public class TestMyString {
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class TestMyString {
         System.out.println("Lower Case: " + lowerCaseString);
 
 
-        MyString str1 = new MyString("qwewerqw");
+        MyString str1 = new MyString("qwewerabc");
         MyString str2 = new MyString("abc");
         MyString str3 = new MyString("qweabcwerqw");
         boolean subContains = str1.contains(str2);
@@ -59,9 +60,9 @@ public class TestMyString {
 
         MyString equalsString3 = new MyString("sfghgfhh");
         MyString equalsString4 = new MyString("sdfhgsdh");
-        boolean equality1 = equalsString3.equals(equalsString4);
+        boolean equality1 = equalsString3.equals(equalsString3);
         String outputEquality1  = String.format("Check if MyString: \"%s\" are equal to: \"%s\". Result: %s",
-                equalsString3, equalsString4, equality1);
+                equalsString3, equalsString3, equality1);
         System.out.println(outputEquality1);
 
         int index = equalsString4.indexOf('f');
