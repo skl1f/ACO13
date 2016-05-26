@@ -105,7 +105,7 @@ public class Group {
     }
 
     public void sort() {
-        int border = this.size() - freePlaces() - 1;
+        int border = this.size() - 1;
         for (int i = 0; i < border; i++) {
             for (int j = i + 1; j <= border; j++) {
                 if (students[i].getName().compareTo(students[j].getName()) > 0) {
