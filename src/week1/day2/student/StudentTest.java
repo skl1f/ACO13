@@ -38,7 +38,14 @@ public class StudentTest {
         System.out.println(alex == null);
 
         System.out.println("--------------");
-        aco13.addStudent(new Student[]{st1, st2});
+        Student st3 = new Student("Alex1",
+                new MyDate(1989, 12, 12),
+                'M');
+
+        Student st4 = new Student("Jack1",
+                new MyDate(1989, 3, 13),
+                'M');
+        aco13.addStudent(new Student[]{st3, st4});
         aco13.showGroup();
         System.out.println("--------------");
 
