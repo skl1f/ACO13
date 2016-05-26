@@ -38,7 +38,7 @@ public class StudentTest {
         System.out.println(alex == null);
 
         System.out.println("--------------");
-        aco13.addStudent(st1);
+        aco13.addStudent(new Student[]{st1, st2});
         aco13.showGroup();
         System.out.println("--------------");
 

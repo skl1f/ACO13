@@ -21,7 +21,7 @@ public class Group {
 
     public Group(String name, Student[] students) {
         this.name = name;
-        this.students = students;
+        this.addStudent(students);
     }
 
     public int size() {
@@ -49,6 +49,13 @@ public class Group {
 
         students[freePlace()] = student;
         counter++;
+        return true;
+    }
+
+    public boolean addStudent(Student[] students) {
+        for (Student s: students) {
+            addStudent(s);
+        }
         return true;
     }
 
@@ -107,7 +114,9 @@ public class Group {
     public void sort() {
         int border = this.size() - 1;
         for (int i = 0; i < border; i++) {
+            if (students[i] == null) {continue;}
             for (int j = i + 1; j <= border; j++) {
+                if (students[j] == null) {continue;}
                 if (students[i].getName().compareTo(students[j].getName()) > 0) {
                     swapStudents(i, j);
                 }
