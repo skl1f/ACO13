@@ -22,20 +22,9 @@ public class StudentTest {
         aco13.addStudent(st1);
         aco13.addStudent(st2);
 
+
+
         aco13.showGroup();
-
-        System.out.println("--------------");
-
-        Student alex = aco13.search("Alex");
-
-        System.out.println(alex.asString());
-
-        aco13.delStudent(alex);
-        System.out.println("--------------");
-        aco13.showGroup();
-        alex = aco13.search("Alex");
-
-        System.out.println(alex == null);
 
         System.out.println("--------------");
         Student st3 = new Student("Alex1",

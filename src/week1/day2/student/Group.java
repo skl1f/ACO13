@@ -4,7 +4,8 @@ package week1.day2.student;
  * Created by gorobec on 22.05.16.
  */
 public class Group {
-    private static final int DEFAULT_GROUP_SIZE = 1;
+    // too small
+    private static final int DEFAULT_GROUP_SIZE = 10;
     private int counter;
     private String name;
     private Student[] students;
@@ -41,11 +42,10 @@ public class Group {
 
     public boolean addStudent(Student student) {
         if (student == null) return false;
-        if (this.freePlaces() == 0) this.extend();
 
-        if ((this.search(student.getName())) != null) {
-            return false;
-        }
+        if (contains(student.getName())) return false;
+//      first check if present than extend
+        if (this.freePlaces() == 0) this.extend();
 
         students[freePlace()] = student;
         counter++;
@@ -54,7 +54,8 @@ public class Group {
 
     public boolean addStudent(Student[] students) {
         for (Student s: students) {
-            addStudent(s);
+//            return false, as you want
+            if(!addStudent(s)) return false;
         }
         return true;
     }
@@ -69,34 +70,29 @@ public class Group {
     }
 
     public void showGroup() {
+//        KISS
         for (int i = 0; i < this.size(); i++) {
-            if (students[i] == null) {
-                continue;
-            } else {
+            if (students[i] != null) {
                 System.out.println(students[i].asString());
             }
         }
     }
 
-    public Student search(String name) {
-        if (name == null) return null;
-
+    public boolean contains(String name) {
+        if (name == null) return false;
         for (Student s : students) {
-            if (s == null) {
-                continue;
-            } else if (s.getName().equals(name)) {
-                return s;
+            if (s != null && s.getName().equals(name)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     public boolean delStudent(Student student) {
         if (student == null) return false;
         for (int i = 0; i < students.length; i++) {
-            if (students[i] == null) {
-                continue;
-            } else if (students[i].getName().equals(student.getName())) {
+//            KISS
+            if (students[i] != null && students[i].getName().equals(student.getName())) {
                 students[i] = null;
                 counter--;
                 return true;
@@ -121,9 +117,6 @@ public class Group {
                     swapStudents(i, j);
                 }
             }
-
         }
     }
-
-
 }
