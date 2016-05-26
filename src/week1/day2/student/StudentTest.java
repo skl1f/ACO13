@@ -11,7 +11,8 @@ public class StudentTest {
         Student st1 = new Student("Alex",
                 new MyDate(1989, 12, 12),
                 'M');
-    Student st2 = new Student("Jack",
+
+        Student st2 = new Student("Jack",
                 new MyDate(1989, 3, 13),
                 'M');
 
@@ -20,17 +21,30 @@ public class StudentTest {
 
         aco13.addStudent(st1);
         aco13.addStudent(st2);
+
         aco13.showGroup();
+
+        System.out.println("--------------");
 
         Student alex = aco13.search("Alex");
 
         System.out.println(alex.asString());
 
         aco13.delStudent(alex);
-
+        System.out.println("--------------");
+        aco13.showGroup();
         alex = aco13.search("Alex");
 
         System.out.println(alex == null);
+
+        System.out.println("--------------");
+        aco13.addStudent(st1);
+        aco13.showGroup();
+        System.out.println("--------------");
+
+        aco13.sort();
+
+        aco13.showGroup();
     }
 
 }
