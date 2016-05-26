@@ -24,28 +24,49 @@ public class Group {
         this.students = students;
     }
 
-    public boolean addStudent(Student student){
-        if(student == null) return false;
-        if(counter >= students.length) return false;
+    public boolean addStudent(Student student) {
+        if (student == null) return false;
+        if (counter >= students.length) return false;
 
 //               todo check if already present in group
+        if ((this.search(student.getName())) != null) {
+            return false;
+        }
 
         students[counter] = student;
         counter++;
         return true;
     }
 
-    public void showGroup(){
+    public void showGroup() {
         for (int i = 0; i < counter; i++) {
             System.out.println(students[i].asString());
         }
     }
 
-    public Student search(String name){
+    public Student search(String name) {
+        if (name == null) return null;
+
+        for (Student s : students) {
+            if (s == null) {
+                continue;
+            } else if (s.getName().equals(name)) {
+                return s;
+            }
+        }
         return null;
     }
 
-    public boolean delStudent(Student student){
+    public boolean delStudent(Student student) {
+        if (student == null) return false;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] == null) {
+                continue;
+            } else if (students[i].getName().equals(student.getName())) {
+                students[i] = null;
+                return true;
+            }
+        }
         return false;
     }
 

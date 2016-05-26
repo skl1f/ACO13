@@ -20,8 +20,17 @@ public class StudentTest {
 
         aco13.addStudent(st1);
         aco13.addStudent(st2);
-
         aco13.showGroup();
+
+        Student alex = aco13.search("Alex");
+
+        System.out.println(alex.asString());
+
+        aco13.delStudent(alex);
+
+        alex = aco13.search("Alex");
+
+        System.out.println(alex == null);
     }
 
 }
