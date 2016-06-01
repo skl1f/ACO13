@@ -39,21 +39,25 @@ public class Student implements Comparable{
         this.averageMark = averageMark;
     }
 
+//   NB! this is not @overridin it's overloading
     public int compareTo(Student student) {
         return getName().compareTo(student.getName());
     }
 
+//    don't need getters here
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         Student student = (Student) o;
-
-        if (Double.compare(student.getAverageMark(), getAverageMark()) != 0) return false;
-        if (getGender() != student.getGender()) return false;
-        if (!getName().equals(student.getName())) return false;
-        return getBirthDay().equals(student.getBirthDay());
+//          mark won't tell about student equality in real life
+//        you can put not all fields in equals
+//        if (Double.compare(student.getAverageMark(), getAverageMark()) != 0) return false;
+        if (gender != student.gender) return false;
+        if (!name.equals(student.name)) return false;
+//        where is BD equals @override???
+        return birthDay.equals(student.birthDay);
 
     }
 
@@ -63,8 +67,8 @@ public class Student implements Comparable{
         long temp;
         result = getName().hashCode();
         result = 31 * result + getBirthDay().hashCode();
-        temp = Double.doubleToLongBits(getAverageMark());
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+//        temp = Double.doubleToLongBits(getAverageMark());
+//        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (int) getGender();
         return result;
     }

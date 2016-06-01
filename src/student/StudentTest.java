@@ -4,6 +4,8 @@ import student.comp.GroupByAvgMark;
 import student.comp.GroupByName;
 import utils.MyDate;
 
+import java.util.ArrayList;
+
 /**
  * Created by gorobec on 22.05.16.
  */
@@ -48,8 +50,6 @@ public class StudentTest {
         st4.setAverageMark(12);
 
         aco13.sort(new GroupByAvgMark());
-
-        System.out.println(aco13);
 
 
     }

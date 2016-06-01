@@ -53,12 +53,15 @@ public class Group{
     }
 
     public boolean delStudent(Student student) {
+//        if you used JDKs ArrayList you even could don't write this line
         if (student == null) return false;
-        if (students.contains(student)) {
+//        KISS
+       /* if (students.contains(student)) {
                 students.remove(student);
                 return true;
             }
-        return false;
+        return false;*/
+        return students.remove(student);
     }
 
     public void sort() {
