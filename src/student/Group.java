@@ -1,4 +1,4 @@
-package week1.day2.student;
+package student;
 
 /**
  * Created by gorobec on 22.05.16.
@@ -73,7 +73,7 @@ public class Group {
 //        KISS
         for (int i = 0; i < this.size(); i++) {
             if (students[i] != null) {
-                System.out.println(students[i].asString());
+                System.out.println(students[i]);
             }
         }
     }

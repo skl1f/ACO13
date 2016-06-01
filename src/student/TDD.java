@@ -1,4 +1,4 @@
-package week1.day2.student;
+package student;
 
 import utils.MyDate;
 
