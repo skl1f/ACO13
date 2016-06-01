@@ -1,10 +1,12 @@
 package student;
 
 import utils.MyDate;
+
+
 /**
  * Created by gorobec on 22.05.16.
  */
-public class Student {
+public class Student implements Comparable{
 
     private String name;
     private MyDate birthDay;
@@ -37,6 +39,10 @@ public class Student {
         this.averageMark = averageMark;
     }
 
+    public int compareTo(Student student) {
+        return getName().compareTo(student.getName());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,5 +72,10 @@ public class Student {
     @Override
     public String toString(){
         return String.format("%2$s, BD - %1$s, average mark - %3$.1f",  birthDay.asString(), name, averageMark);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return getName().compareTo(((Student) o).getName());
     }
 }
