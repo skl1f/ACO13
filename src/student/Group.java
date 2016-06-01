@@ -1,10 +1,6 @@
 package student;
 
 import utils.MyArrayList;
-
-import java.util.Arrays;
-import java.util.Comparator;
-
 /**
  * Created by gorobec on 22.05.16.
  */

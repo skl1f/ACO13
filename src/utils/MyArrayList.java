@@ -7,6 +7,7 @@ import java.util.Comparator;
 /**
  * Created by skl1f on 6/1/2016.
  */
+
 public class MyArrayList implements Comparator<Object>{
     private final int DEFAULT_SIZE = 0;
     private Object[] array;
