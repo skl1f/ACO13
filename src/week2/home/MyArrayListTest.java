@@ -21,6 +21,9 @@ public class MyArrayListTest {
         System.out.println(arrayList);
         arrayList.clear();
         System.out.println(arrayList);
+
+        arrayList = new MyArrayList(new Object[]{"one", "second"});
+        System.out.println(arrayList);
     }
 
 }

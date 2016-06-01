@@ -14,6 +14,11 @@ public class MyArrayList {
         array = new Object[DEFAULT_SIZE];
     }
 
+    public MyArrayList(Object[] objs) {
+        array = objs;
+    }
+
+
     @Override
     public String toString() {
         return String.format("MyArrayList{%s}", Arrays.toString(array));
