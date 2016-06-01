@@ -6,7 +6,7 @@ package utils;
  * For study purpose
  */
 
-public class MyString {
+public final class MyString {
 
     private char[] characters;
 
