@@ -15,7 +15,7 @@ public class MyArrayList {
     }
 
     public MyArrayList(Object[] objs) {
-        array = objs;
+        System.arraycopy(objs, 0, array, 0, objs.length);
     }
 
 
