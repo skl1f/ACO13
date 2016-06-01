@@ -1,7 +1,7 @@
 package student;
 
-import student.comparators.GroupByAvgMark;
-import student.comparators.GroupByName;
+import student.comp.GroupByAvgMark;
+import student.comp.GroupByName;
 import utils.MyDate;
 
 /**

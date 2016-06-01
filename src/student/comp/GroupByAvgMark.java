@@ -1,4 +1,4 @@
-package student.comparators;
+package student.comp;
 
 import student.Student;
 
