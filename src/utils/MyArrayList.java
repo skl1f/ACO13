@@ -99,7 +99,7 @@ public class MyArrayList implements Comparator<Object>{
         }
     }
 
-    private void swap(int i, int j) {
+    public void swap(int i, int j) {
         Object tmp = get(i);
         set(i, get(j));
         set(j, tmp);

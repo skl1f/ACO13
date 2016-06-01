@@ -2,6 +2,8 @@ package student;
 
 import utils.MyDate;
 
+import java.util.Comparator;
+
 /**
  * Created by gorobec on 22.05.16.
  */
@@ -38,7 +40,7 @@ public class StudentTest {
         aco13.showGroup();
         System.out.println("--------------");
 
-        aco13.sort();
+        aco13.sort(new GroupByName());
 
         aco13.showGroup();
     }

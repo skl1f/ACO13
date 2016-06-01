@@ -1,6 +1,9 @@
 package student;
 
 import utils.MyArrayList;
+
+import java.util.Comparator;
+
 /**
  * Created by gorobec on 22.05.16.
  */
@@ -59,5 +62,16 @@ public class Group{
 
     public void sort() {
         students.sort();
+    }
+
+    public void sort(Comparator comparator) {
+        int border = this.size() - 1;
+        for (int i = 0; i < border; i++) {
+            for (int j = i + 1; j <= border; j++) {
+                if (comparator.compare(students.get(i), students.get(j)) > 0) {
+                    students.swap(i, j);
+                }
+            }
+        }
     }
 }
