@@ -1,8 +1,8 @@
 package student;
 
+import student.comparators.GroupByAvgMark;
+import student.comparators.GroupByName;
 import utils.MyDate;
-
-import java.util.Comparator;
 
 /**
  * Created by gorobec on 22.05.16.
@@ -25,8 +25,7 @@ public class StudentTest {
         aco13.addStudent(st2);
 
 
-
-        aco13.showGroup();
+        System.out.println(aco13);
 
         System.out.println("--------------");
         Student st3 = new Student("Alex1",
@@ -37,12 +36,22 @@ public class StudentTest {
                 new MyDate(1989, 3, 13),
                 'M');
         aco13.addStudent(new Student[]{st3, st4});
-        aco13.showGroup();
+        System.out.println(aco13);
         System.out.println("--------------");
 
         aco13.sort(new GroupByName());
 
-        aco13.showGroup();
+        System.out.println(aco13);
+
+        st1.setAverageMark(10);
+        st3.setAverageMark(9);
+        st4.setAverageMark(12);
+
+        aco13.sort(new GroupByAvgMark());
+
+        System.out.println(aco13);
+
+
     }
 
 }

@@ -43,8 +43,9 @@ public class Group{
         return true;
     }
 
-    public void showGroup() {
-        System.out.println(students);
+    @Override
+    public String toString() {
+        return students.toString();
     }
 
     public boolean contains(Student student) {
